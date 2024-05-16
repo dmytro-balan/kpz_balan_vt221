@@ -62,21 +62,21 @@ class Director:
     def create_hero(builder):
         return builder.set_height(180) \
                       .set_build("Athletic") \
-                      .set_hair_color("Blonde") \
-                      .set_eye_color("Blue") \
-                      .set_outfit("Heroic Armor") \
-                      .set_inventory("Sword") \
+                      .set_hair_color("Browhair") \
+                      .set_eye_color("Black") \
+                      .set_outfit("Lether suit") \
+                      .set_inventory("Magic") \
                       .build()
 
     @staticmethod
     def create_enemy(builder):
         return builder.set_height(170) \
-                      .set_build("Muscular") \
-                      .set_hair_color("Black") \
+                      .set_build("Athletic") \
+                      .set_hair_color("Dark grey") \
                       .set_eye_color("Red") \
-                      .set_outfit("Dark Armor") \
-                      .set_inventory("Dagger") \
-                      .set_evil_deeds(["Plundering", "Terrorizing"]) \
+                      .set_outfit("Dark sword") \
+                      .set_inventory("Souls of people") \
+                      .set_evil_deeds(["Bedlam", "Terrorize"]) \
                       .set_good_deeds(["None"]) \
                       .build()
 
