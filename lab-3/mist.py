@@ -10,7 +10,14 @@ class Renderer(ABC):
 
 class VectorRenderer(Renderer):
     def render(self, shape):
-        pass  # Тут реалізується рендеринг векторної графіки, якщо потрібно
+        print(f"Drawing {shape.__class__.__name__} as vector graphic")
+
+        if isinstance(shape, Square):
+            print(f"Vector rendering of square with side {shape.side}")
+        elif isinstance(shape, Circle):
+            print(f"Vector rendering of circle with radius {shape.radius}")
+        elif isinstance(shape, Triangle):
+            print(f"Vector rendering of triangle with base {shape.base} and height {shape.height}")
 
 
 class RasterRenderer(Renderer):
@@ -18,7 +25,12 @@ class RasterRenderer(Renderer):
         print(f"Drawing {shape.__class__.__name__} as raster graphic")
         image = Image.new("RGB", (100, 100), "white")
         draw = ImageDraw.Draw(image)
-        draw.rectangle([10, 10, 90, 90], fill="blue")  # Приклад рендерингу квадрата як растрового зображення
+        if isinstance(shape, Square):
+            draw.rectangle([10, 10, 90, 90], fill="blue")
+        elif isinstance(shape, Circle):
+            draw.ellipse([10, 10, 90, 90], fill="red")
+        elif isinstance(shape, Triangle):
+            draw.polygon([10, 90, 90, 90, 50, 10], fill="green")
         image.show()
 
 
@@ -60,10 +72,31 @@ class Triangle(Shape):
 
 
 def main():
-    raster_renderer = RasterRenderer()
+    renderer_choice = input("Choose renderer (raster/vector): ").strip().lower()
+    if renderer_choice == "raster":
+        renderer = RasterRenderer()
+    elif renderer_choice == "vector":
+        renderer = VectorRenderer()
+    else:
+        print("Invalid choice of renderer")
+        return
 
-    square = Square(raster_renderer, 4)
-    square.draw()
+    shape_choice = input("Choose shape (circle/square/triangle): ").strip().lower()
+    if shape_choice == "circle":
+        radius = float(input("Enter radius of the circle: "))
+        shape = Circle(renderer, radius)
+    elif shape_choice == "square":
+        side = float(input("Enter side length of the square: "))
+        shape = Square(renderer, side)
+    elif shape_choice == "triangle":
+        base = float(input("Enter base length of the triangle: "))
+        height = float(input("Enter height of the triangle: "))
+        shape = Triangle(renderer, base, height)
+    else:
+        print("Invalid choice of shape")
+        return
+
+    shape.draw()
 
 
 if __name__ == "__main__":

@@ -1,0 +1,9 @@
+digraph "classes" {
+rankdir=BT
+charset="utf-8"
+"animal_management.Animal" [color="black", fontcolor="black", label=<{Animal|name<br ALIGN="LEFT"/>species<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"animal_management.Employee" [color="black", fontcolor="black", label=<{Employee|name<br ALIGN="LEFT"/>position<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"animal_management.Enclosure" [color="black", fontcolor="black", label=<{Enclosure|enclosure_type<br ALIGN="LEFT"/>size<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"animal_management.Food" [color="black", fontcolor="black", label=<{Food|name<br ALIGN="LEFT"/>quantity<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"animal_management.Inventory" [color="black", fontcolor="black", label=<{Inventory|animals<br ALIGN="LEFT"/>employees<br ALIGN="LEFT"/>enclosures<br ALIGN="LEFT"/>foods<br ALIGN="LEFT"/>|display_animals()<br ALIGN="LEFT"/>display_employees()<br ALIGN="LEFT"/>display_enclosures()<br ALIGN="LEFT"/>display_foods()<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+}

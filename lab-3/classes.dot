@@ -1,20 +1,5 @@
 digraph "classes" {
 rankdir=BT
 charset="utf-8"
-"herous.Armor" [color="black", fontcolor="black", label=<{Armor|type : str<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
-"herous.EquipmentDecorator" [color="black", fontcolor="black", label=<{EquipmentDecorator|item<br ALIGN="LEFT"/>modifier<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
-"herous.Hero" [color="black", fontcolor="black", label=<{Hero|inventory : list<br ALIGN="LEFT"/>name<br ALIGN="LEFT"/>|equip()<br ALIGN="LEFT"/>show_inventory()<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
-"herous.Item" [color="black", fontcolor="black", label=<{Item|name<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
-"herous.Mage" [color="black", fontcolor="black", label=<{Mage|hero_class : str<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
-"herous.Paladin" [color="black", fontcolor="black", label=<{Paladin|hero_class : str<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
-"herous.Staff" [color="black", fontcolor="black", label=<{Staff|type : str<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
-"herous.Sword" [color="black", fontcolor="black", label=<{Sword|type : str<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
-"herous.Warrior" [color="black", fontcolor="black", label=<{Warrior|hero_class : str<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
-"herous.Armor" -> "herous.Item" [arrowhead="empty", arrowtail="none"];
-"herous.EquipmentDecorator" -> "herous.Item" [arrowhead="empty", arrowtail="none"];
-"herous.Mage" -> "herous.Hero" [arrowhead="empty", arrowtail="none"];
-"herous.Paladin" -> "herous.Hero" [arrowhead="empty", arrowtail="none"];
-"herous.Staff" -> "herous.Item" [arrowhead="empty", arrowtail="none"];
-"herous.Sword" -> "herous.Item" [arrowhead="empty", arrowtail="none"];
-"herous.Warrior" -> "herous.Hero" [arrowhead="empty", arrowtail="none"];
+"book.LightHTML" [color="black", fontcolor="black", label=<{LightHTML|root : LightElementNode, NoneType<br ALIGN="LEFT"/>total_nodes : int<br ALIGN="LEFT"/>|parse_lines(lines)<br ALIGN="LEFT"/>parse_text_to_html(text)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
 }
